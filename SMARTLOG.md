@@ -33,7 +33,6 @@ Bitácora de automejora del agente para este proyecto.
 3. Mantener `content.ts` como única fuente evita drift entre Nav, Footer y CTAs.
 4. Priorizar definición del ancla visual (estatua) y degradar solo donde hay copy.
 
-### Checklist rápido antes de publicar
-- [ ] Confirmar número WhatsApp E.164 (`543751476428`).
-- [ ] Probar formulario en mobile (pop-ups / app WhatsApp).
-- [ ] Revisar textos legales con Paula.
+### 2026-08-09 — Preview WhatsApp (Open Graph)
+- Agregado `public/og-share.png` + meta `og:image` / `twitter:image` con URL absoluta de Pages.
+- Lección: WhatsApp cachea fuerte el preview; tras el push conviene forzar refresh o esperar.
