@@ -1,42 +1,44 @@
-# Portafolio · Rubén Rossnagel
+# LA TOGA | Abogada Paula García
 
-Sitio estático de portafolio profesional (React + Vite + Tailwind v4), listo para publicar en **GitHub Pages**.
+Sitio web profesional del estudio **LA TOGA · Misiones** (React + Vite + Tailwind v4).
 
-Diseño guiado por [Taste Skill](https://www.tasteskill.dev/) (`design-taste-frontend`).
+Diseño orientado a confianza jurídica: identidad negro / oro / crema alineada al branding de TikTok [`@abogada.paulagarcia`](https://www.tiktok.com/@abogada.paulagarcia).
 
-## Desarrollo local
+## Qué incluye
+
+- Hero de marca **LA TOGA** + CTAs WhatsApp / formulario
+- Áreas: familia, fertilidad (ROPA / Ley 26.862), amparos de salud, previsional, ART, partidas
+- Sección **Mito o verdad** (estilo educativo del contenido)
+- Ejemplos prácticos + proceso de atención
+- Formulario de consulta (abre WhatsApp con datos del cliente)
+- Botón flotante de WhatsApp (`3751 476428`)
+
+## Desarrollo
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Build / Pages
 
 ```bash
 npm run build
 ```
 
-La salida queda en `dist/`.
+Deploy automático vía `.github/workflows/deploy.yml` al pushear a `main`.
 
-## Publicar en GitHub Pages
+**Repo Pages:** [RubenRossnagel/PG](https://github.com/RubenRossnagel/PG)  
+**URL esperada:** `https://rubenrossnagel.github.io/PG/`
 
-El repo incluye `.github/workflows/deploy.yml`. Al pushear a `main`, GitHub Actions buildea y publica automáticamente.
+En GitHub: **Settings → Pages → Source: GitHub Actions** (una sola vez).
 
-1. En el repo: **Settings → Pages**.
-2. **Source:** GitHub Actions (no “Deploy from a branch”).
-3. Pusheá el workflow (y el resto del código) a `main`.
-4. Revisá el run en la pestaña **Actions**.
-5. La URL queda en: `https://rubenrossnagel.github.io/CV/`
+## Contenido editable
 
-Si preferís el método manual con carpeta `docs`:
+Textos y datos en `src/data/content.ts`.  
+Helpers de WhatsApp en `src/lib/whatsapp.ts`.
 
-```bash
-npm run pages:docs
-```
+## Docs internas
 
-Y en Pages elegí branch `main` / folder `/docs`.
-
-## Contenido
-
-Los datos del CV viven en `src/data/content.ts` (extraídos de tu Curriculum Vitae en Notion).
+- `SMARTLOG.md` — aprendizajes y mejoras del agente
+- Referencias visuales generadas en el proceso de diseño (assets del workspace)

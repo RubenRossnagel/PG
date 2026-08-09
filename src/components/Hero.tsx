@@ -1,75 +1,86 @@
 import { motion, useReducedMotion } from "motion/react"
-import { ArrowDownRight, ArrowUpRight } from "@phosphor-icons/react"
-import { profile } from "../data/content"
+import { brand } from "../data/content"
+import { buildWhatsAppUrl, defaultWhatsAppGreeting } from "../lib/whatsapp"
 
 export function Hero() {
   const reduce = useReducedMotion()
 
   return (
-    <section
-      id="top"
-      className="relative min-h-[100dvh] overflow-hidden border-b border-line"
-    >
+    <section id="top" className="relative min-h-[100dvh] overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="./images/hero-atmosphere.png"
           alt=""
-          className="h-full w-full object-cover opacity-55"
+          className="h-full w-full scale-105 object-cover object-[72%_center] brightness-[1.08] contrast-[1.12] saturate-[1.05] md:object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/50" />
+        {/* Oscurece solo la zona del texto; deja ver la Justitia a la derecha */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-transparent md:via-ink/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_45%,transparent_0%,transparent_40%,rgba(10,10,10,0.35)_100%)]" />
       </div>
 
-      <div className="page-shell relative grid min-h-[100dvh] items-end pb-16 pt-24 md:items-center md:pb-20 md:pt-20">
+      <div className="page-shell relative flex min-h-[100dvh] items-end pb-20 pt-28 md:items-end md:pb-24">
         <div className="max-w-3xl">
           <motion.p
-            className="mb-5 font-mono text-[11px] uppercase tracking-[0.22em] text-accent"
-            initial={reduce ? false : { opacity: 0, y: 12 }}
+            className="mb-4 text-[11px] uppercase tracking-[0.28em] text-gold"
+            initial={reduce ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
           >
-            {profile.role} · Argentina
+            {brand.professional} · {brand.location}
           </motion.p>
 
+          {/* Marca como señal hero (brand-first), no solo nav */}
           <motion.h1
-            className="text-balance text-4xl font-medium tracking-tighter text-paper md:text-6xl lg:text-7xl leading-[1.05]"
-            initial={reduce ? false : { opacity: 0, y: 24 }}
+            className="font-display text-balance text-6xl font-semibold leading-[0.95] tracking-tight text-gold md:text-8xl lg:text-[7.5rem]"
+            initial={reduce ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.75, delay: 0.06, ease: [0.32, 0.72, 0, 1] }}
           >
-            {profile.name}
+            {brand.name}
           </motion.h1>
 
           <motion.p
-            className="mt-5 max-w-[38ch] text-base leading-relaxed text-mute md:text-lg"
+            className="mt-3 font-display text-2xl text-paper/90 md:text-3xl"
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.16 }}
+            transition={{ duration: 0.6, delay: 0.14, ease: [0.32, 0.72, 0, 1] }}
           >
-            {profile.headline}
+            {brand.tagline}
+            <span className="text-mute"> — {brand.role}</span>
+          </motion.p>
+
+          <motion.p
+            className="mt-6 max-w-[40ch] text-base leading-relaxed text-mute md:text-lg"
+            initial={reduce ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.32, 0.72, 0, 1] }}
+          >
+            {brand.headline}
           </motion.p>
 
           <motion.div
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-9 flex flex-wrap items-center gap-3"
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.24 }}
+            transition={{ duration: 0.6, delay: 0.28, ease: [0.32, 0.72, 0, 1] }}
           >
             <a
-              href="#proyectos"
-              className="inline-flex h-11 items-center gap-2 rounded-[12px] bg-accent px-5 text-sm font-medium text-ink transition-transform active:scale-[0.98] hover:bg-accent/90"
-            >
-              Ver proyectos
-              <ArrowDownRight size={16} weight="bold" />
-            </a>
-            <a
-              href={profile.githubPrimary}
+              href={buildWhatsAppUrl(defaultWhatsAppGreeting)}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-[12px] border border-line bg-ink-elevated/70 px-5 text-sm text-paper transition-colors hover:border-accent/40"
+              className="group inline-flex h-12 items-center gap-2 rounded-full bg-gold px-6 text-sm font-semibold text-ink transition-transform duration-500 ease-luxe hover:bg-gold-soft active:scale-[0.98]"
             >
-              GitHub
-              <ArrowUpRight size={16} weight="bold" />
+              Consultar por WhatsApp
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink/10 transition-transform duration-500 ease-luxe group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                ↗
+              </span>
+            </a>
+            <a
+              href="#contacto"
+              className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm text-paper transition-colors duration-500 ease-luxe hover:border-gold/50 hover:text-gold"
+            >
+              Enviar consulta
             </a>
           </motion.div>
         </div>

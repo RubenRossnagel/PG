@@ -1,9 +1,14 @@
-# Deploy Vite → GitHub Pages
+# Despliegue automático a GitHub Pages (Actions)
+# Repo destino esperado: https://github.com/RubenRossnagel/PG
+#
+# Después del primer push a main:
+#   Settings → Pages → Build and deployment → Source: GitHub Actions
 name: Deploy GitHub Pages
 
 on:
   push:
     branches: [main]
+  # Permite redeploy manual desde la pestaña Actions
   workflow_dispatch:
 
 permissions:
@@ -28,13 +33,13 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist

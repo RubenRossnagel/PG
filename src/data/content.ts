@@ -1,141 +1,147 @@
-export const profile = {
-  name: "Rubén Rossnagel",
-  role: "Desarrollador Backend",
-  location: "Misiones / Corrientes, Argentina",
-  headline: "Backend con C# y .NET, listo para sumar a un equipo.",
+/**
+ * Fuente única de contenido del sitio LA TOGA.
+ * Separar datos de la UI (SRP) facilita actualizar textos sin tocar componentes.
+ */
+export const brand = {
+  name: "LA TOGA",
+  tagline: "Misiones",
+  fullName: "LA TOGA | Misiones",
+  professional: "Abogada Paula García",
+  role: "Soluciones jurídicas integrales",
+  location: "Misiones, Argentina",
+  headline:
+    "Acompañamiento legal claro, humano y estratégico para proteger tus derechos.",
   summary:
-    "Siempre dispuesto a aprender y aportar lo mejor. Busco una oportunidad como desarrollador backend, con base sólida en C#, SQL y sistemas de gestión reales.",
-  email: "rubenrossnagel@gmail.com",
-  phone: "+54 9 3765 224088",
-  whatsapp: "https://wa.me/5493765224088",
-  whatsappLabel: "+54 9 3765 224088",
-  linkedin: "https://www.linkedin.com/in/rubenrossnagel/",
-  platzi: "https://platzi.com/p/RubenRossnagel/",
-  githubPrimary: "https://github.com/RubenRossnagel",
-  githubSecondary: "https://github.com/RossnagelRuben",
+    "Estudio jurídico orientado a familias, salud, fertilidad y previsional. Explicamos cada paso con lenguaje simple y estrategias concretas, como en nuestros contenidos educativos.",
 } as const
 
-export const skills = {
-  languages: ["C#", "SQL", "ASP.NET", "Blazor", ".NET MAUI"],
-  data: ["SQL Server", "MySQL", "Access", "Modelado de datos"],
-  tools: ["Visual Studio", "Git / GitHub", "Windows Server", "Office"],
-  focus: [
-    "APIs y backend",
-    "Sistemas de gestión",
-    "Bases de datos",
-    "Soporte técnico aplicado",
-  ],
+export const contact = {
+  phoneDisplay: "3751 476428",
+  /** Formato internacional sin + ni espacios (wa.me). */
+  phoneE164: "543751476428",
+  whatsappLabel: "WhatsApp · 3751 476428",
+  tiktok: "https://www.tiktok.com/@abogada.paulagarcia",
+  tiktokHandle: "@abogada.paulagarcia",
+  email: "", // opcional: completar si se publica un correo institucional
 } as const
-
-export const experience = [
-  {
-    company: "DRR Systemas",
-    role: "Soporte, ventas técnicas y capacitación",
-    points: [
-      "Armado y reparación de PCs, atención y soporte a clientes.",
-      "Control de stock e insumos informáticos.",
-      "Venta y capacitación de sistemas de gestión comercial.",
-    ],
-  },
-  {
-    company: "Estudio Jurídico Dra. Paula García",
-    role: "Administración, soporte y agente de cambio",
-    points: [
-      "Atención al cliente y soporte técnico del estudio.",
-      "Administración de expedientes y casos.",
-      "Acompañamiento en adopción de herramientas digitales.",
-    ],
-  },
-  {
-    company: "Iguazú Libros",
-    role: "Administración y ventas",
-    points: [
-      "Carga de ventas, clientes, productos y actualización de precios.",
-      "Atención presencial y no presencial.",
-      "Organización administrativa del punto de venta.",
-    ],
-  },
-] as const
-
-export const projects = [
-  {
-    title: "Visión Google + OpenAI",
-    blurb:
-      "Reconocimiento de imágenes y extracción de caracteres con Vision API y OpenAI.",
-    stack: ["C#", "Vision API", "OpenAI"],
-    href: "https://github.com/RubenRossnagel/VISIONGOOGLE",
-    image: "./images/project-vision.png",
-    accent: "vision" as const,
-  },
-  {
-    title: "Autopartes LEO",
-    blurb:
-      "Sistema de gestión para casas de repuestos: stock, ventas y operación diaria.",
-    stack: ["HTML", "TypeScript", "Gestión"],
-    href: "https://github.com/RossnagelRuben/Autopartes_LEO",
-    image: "./images/project-gestion.png",
-    accent: "gestion" as const,
-  },
-  {
-    title: "PG Estudios Jurídicos",
-    blurb:
-      "Sistema de gestión para estudios jurídicos: casos, clientes y administración.",
-    stack: ["C#", ".NET", "SQL"],
-    href: "https://github.com/RossnagelRuben/PG",
-    image: "./images/project-gestion.png",
-    accent: "legal" as const,
-  },
-  {
-    title: "QR Mesas",
-    blurb:
-      "Flujo con códigos QR orientado a mesas y experiencia de atención.",
-    stack: ["C#", "QR", "WPF"],
-    href: "https://github.com/RubenRossnagel/QR_Mesas",
-    image: "./images/project-qr.png",
-    accent: "qr" as const,
-  },
-] as const
-
-export const education = [
-  {
-    title: "Analista en Sistemas",
-    place: "CESMI, Eldorado, Misiones",
-    detail: "Título obtenido en diciembre 2022",
-  },
-  {
-    title: "Analista en Sistemas (1° y 2° año)",
-    place: "I.S.I.P.P, Puerto Piray, Misiones",
-    detail: "Formación superior en informática",
-  },
-  {
-    title: "Secundario Humanidades y Ciencias Sociales",
-    place: "Colegio Hipólito Yrigoyen, Corrientes",
-    detail: "Finalizado en 2016",
-  },
-] as const
-
-export const courses = [
-  "ASP.NET Core",
-  "Blazor y .NET Core",
-  "Fundamentos de .NET",
-  "C# con .NET",
-  "SQL y MySQL",
-  "Fundamentos de bases de datos",
-  "Backend introductorio",
-  "Git y GitHub profesional",
-  ".NET MAUI",
-  "Xamarin multiplataforma",
-  "Python básico",
-  "POO",
-  "Bootstrap",
-  "IBM Cloud / Watson",
-  "Marketing digital",
-  "Redes Mikrotik y Ubiquiti",
-] as const
 
 export const nav = [
-  { label: "Sobre mí", href: "#sobre" },
-  { label: "Experiencia", href: "#experiencia" },
-  { label: "Proyectos", href: "#proyectos" },
+  { label: "Estudio", href: "#estudio" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Mito o verdad", href: "#mitos" },
+  { label: "Casos", href: "#casos" },
   { label: "Contacto", href: "#contacto" },
+] as const
+
+export const services = [
+  {
+    id: "familia",
+    title: "Derecho de familia",
+    blurb:
+      "Cuota alimentaria, régimen de comunicación, lactancia y acuerdos que cuidan el vínculo familiar.",
+    topics: ["Cuota alimentaria", "Visitas y comunicación", "Derechos de lactancia"],
+  },
+  {
+    id: "fertilidad",
+    title: "Fertilidad y ROPA",
+    blurb:
+      "Orientación sobre Método ROPA y cobertura bajo la Ley Nº 26.862 de reproducción asistida.",
+    topics: ["Método ROPA", "Ley 26.862", "Cobertura de tratamientos"],
+  },
+  {
+    id: "salud",
+    title: "Amparos de salud",
+    blurb:
+      "Cuando la obra social o prepaga niega un tratamiento, actuamos con amparo y seguimiento.",
+    topics: ["Negativas de cobertura", "Tratamientos urgentes", "Amparo"],
+  },
+  {
+    id: "previsional",
+    title: "Derecho previsional",
+    blurb:
+      "Jubilaciones, moratorias, aportes faltantes y opciones pensadas para madres e historias laborales reales.",
+    topics: ["Aportes incompletos", "Planes de pago", "Jubilación por hijos"],
+  },
+  {
+    id: "art",
+    title: "ART y riesgos del trabajo",
+    blurb:
+      "Asesoramiento ante accidentes laborales y reclamos frente a ART, con foco en protección efectiva.",
+    topics: ["Accidentes laborales", "Reclamos ART", "Seguimiento del caso"],
+  },
+  {
+    id: "partidas",
+    title: "Gestión de partidas",
+    blurb:
+      "Solicitud y gestión de partidas y documentación oficial en la provincia de Misiones.",
+    topics: ["Partidas provinciales", "Trámites documentales", "Seguimiento"],
+  },
+] as const
+
+export const myths = [
+  {
+    claim: "Si no trabajé en blanco, no puedo jubilarme nunca.",
+    verdict: "mito" as const,
+    truth:
+      "Existen caminos previsionales (moratorias, planes de pago y otras vías) que permiten regularizar aportes. Cada historia laboral se analiza caso por caso.",
+  },
+  {
+    claim: "La cuota alimentaria se fija siempre en un porcentaje fijo del sueldo.",
+    verdict: "mito" as const,
+    truth:
+      "Se evalúan necesidades del hijo/a y posibilidades del alimentante. No hay una fórmula única para todos los casos.",
+  },
+  {
+    claim: "Si la obra social niega un tratamiento, no hay nada que hacer.",
+    verdict: "mito" as const,
+    truth:
+      "En muchos casos procede un amparo de salud para exigir cobertura cuando hay derecho. Actuar a tiempo cambia el resultado.",
+  },
+] as const
+
+export const cases = [
+  {
+    title: "Jubilación con aportes incompletos",
+    detail:
+      "Se revisó la historia laboral, se evaluó moratoria o plan de pago y se armó un camino previsional realista.",
+  },
+  {
+    title: "Amparo ante negativa de cobertura",
+    detail:
+      "Obra social denegó un tratamiento. Se reunió documentación médica y se impulsó la vía de amparo con seguimiento.",
+  },
+  {
+    title: "Familia: cuota y comunicación",
+    detail:
+      "Se ordenó el reclamo alimentario y se trabajó un régimen de comunicación claro, priorizando el interés de niñas y niños.",
+  },
+] as const
+
+export const processSteps = [
+  {
+    n: "01",
+    title: "Contanos tu caso",
+    detail: "Por WhatsApp o formulario: qué pasó, qué necesitás y qué documentación tenés.",
+  },
+  {
+    n: "02",
+    title: "Analizamos opciones",
+    detail: "Te explicamos escenarios posibles, plazos y estrategia con lenguaje claro.",
+  },
+  {
+    n: "03",
+    title: "Acompañamos el trámite",
+    detail: "Seguimiento del expediente o gestión, con comunicación cercana en cada etapa.",
+  },
+] as const
+
+/** Temas del formulario — alineados con servicios reales del estudio. */
+export const consultationTopics = [
+  { value: "familia", label: "Derecho de familia" },
+  { value: "fertilidad", label: "Fertilidad / Método ROPA" },
+  { value: "salud", label: "Amparos de salud" },
+  { value: "previsional", label: "Jubilación / previsional" },
+  { value: "art", label: "ART / accidente laboral" },
+  { value: "partidas", label: "Partidas / documentación" },
+  { value: "otro", label: "Otro motivo" },
 ] as const

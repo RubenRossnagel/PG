@@ -1,22 +1,32 @@
 @import "tailwindcss";
-@import "@fontsource-variable/geist";
-@import "@fontsource-variable/geist-mono";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource-variable/manrope";
 
 @theme {
-  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
 
-  --color-ink: #09090b;
-  --color-ink-elevated: #111114;
-  --color-ink-soft: #18181b;
-  --color-line: #27272a;
-  --color-mute: #a1a1aa;
-  --color-paper: #fafafa;
-  --color-accent: #2dd4bf;
-  --color-accent-deep: #0f766e;
-  --color-accent-soft: #134e4a;
+  /* Identidad LA TOGA: negro · oro · crema (desde branding TikTok) */
+  --color-ink: #0a0a0a;
+  --color-ink-elevated: #141414;
+  --color-ink-soft: #1c1c1c;
+  --color-line: #2a2a2a;
+  --color-line-soft: #e8e2d6;
+  --color-mute: #a8a29a;
+  --color-paper: #f7f3eb;
+  --color-paper-deep: #ebe4d6;
+  --color-gold: #c9a227;
+  --color-gold-soft: #e0c56a;
+  --color-gold-deep: #8f7010;
+  --color-accent: #c9a227;
+  --color-accent-deep: #8f7010;
+  --color-accent-soft: #2a2410;
 
-  --radius-shell: 12px;
+  --ease-luxe: cubic-bezier(0.32, 0.72, 0, 1);
+  --radius-shell: 1.25rem;
 }
 
 @layer base {
@@ -41,8 +51,8 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--color-accent) 35%, transparent);
-    color: var(--color-paper);
+    background: color-mix(in oklab, var(--color-gold) 40%, transparent);
+    color: var(--color-ink);
   }
 
   a {
@@ -54,6 +64,13 @@
     max-width: 100%;
     display: block;
   }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
 }
 
 @layer utilities {
@@ -62,38 +79,26 @@
     margin-inline: auto;
   }
 
-  .hairline {
-    border-color: var(--color-line);
+  .font-display {
+    font-family: var(--font-display);
   }
 
   .text-balance {
     text-wrap: balance;
   }
-}
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
+  /* Grain fijo: no va en contenedores con scroll (perf). */
+  .grain-overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-  to {
-    transform: translateX(-50%);
-  }
-}
 
-.skills-marquee {
-  display: flex;
-  width: max-content;
-  gap: 0.75rem;
-  padding-right: 0.75rem;
-  animation: marquee 34s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .skills-marquee {
-    animation: none;
-    flex-wrap: wrap;
-    width: min(1120px, calc(100% - 2rem));
-    margin-inline: auto;
-    justify-content: flex-start;
+  .ease-luxe {
+    transition-timing-function: var(--ease-luxe);
   }
 }
