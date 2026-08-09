@@ -33,6 +33,8 @@ Bitácora de automejora del agente para este proyecto.
 3. Mantener `content.ts` como única fuente evita drift entre Nav, Footer y CTAs.
 4. Priorizar definición del ancla visual (estatua) y degradar solo donde hay copy.
 
-### 2026-08-09 — Preview WhatsApp (Open Graph)
+### 2026-08-09 — About: Justitia a la izquierda
+- Recuadro de Paula García usaba el hero (estatua a la derecha, recortada).
+- Nueva imagen `about-justitia.png` + texto LA TOGA alineado a la derecha del card.
 - Agregado `public/og-share.png` + meta `og:image` / `twitter:image` con URL absoluta de Pages.
 - Lección: WhatsApp cachea fuerte el preview; tras el push conviene forzar refresh o esperar.

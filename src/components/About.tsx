@@ -38,12 +38,13 @@ export function About() {
           <div className="rounded-[2rem] bg-ink/5 p-2 ring-1 ring-ink/5">
             <div className="relative overflow-hidden rounded-[calc(2rem-0.5rem)] bg-ink-elevated shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
               <img
-                src="./images/hero-atmosphere.png"
-                alt="Ambiente institucional LA TOGA"
-                className="aspect-[4/5] w-full object-cover opacity-90 md:aspect-[5/6]"
+                src="./images/about-justitia.png"
+                alt="Justitia — símbolo de LA TOGA"
+                className="aspect-[4/5] w-full origin-left scale-[1.15] object-cover object-left opacity-95 md:aspect-[5/6]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
+              {/* Estatua + copy anclados a la izquierda del recuadro */}
+              <div className="absolute bottom-0 left-0 max-w-[90%] p-8 text-left">
                 <p className="font-display text-3xl text-gold">LA TOGA</p>
                 <p className="mt-1 text-sm text-paper/75">
                   Soluciones jurídicas integrales · Misiones
