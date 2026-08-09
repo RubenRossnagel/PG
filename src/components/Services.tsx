@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "@phosphor-icons/react"
-import { services } from "../data/content"
+import { brand, services, servicesIntro } from "../data/content"
 import { Reveal } from "./Reveal"
 
 export function Services() {
@@ -8,29 +8,25 @@ export function Services() {
       <div className="page-shell">
         <Reveal>
           <p className="text-[11px] uppercase tracking-[0.28em] text-gold">
-            Áreas de práctica
+            {servicesIntro.eyebrow}
           </p>
-          <h2 className="mt-4 max-w-[16ch] font-display text-4xl font-semibold tracking-tight text-paper md:text-6xl">
-            Servicios pensados para casos reales
+          <h2 className="mt-4 max-w-[18ch] font-display text-4xl font-semibold tracking-tight text-paper md:text-6xl">
+            {servicesIntro.title}
           </h2>
-          <p className="mt-5 max-w-[48ch] text-base leading-relaxed text-mute">
-            Las mismas temáticas que desarrollamos en contenido educativo: familia,
-            fertilidad, salud, previsional, ART y documentación en Misiones.
+          <p className="mt-5 max-w-[54ch] text-base leading-relaxed text-mute">
+            {servicesIntro.lead}
           </p>
         </Reveal>
 
         <ul className="mt-16 divide-y divide-line border-y border-line">
           {services.map((service, index) => (
             <li key={service.id}>
-              <Reveal delay={index * 0.04}>
+              <Reveal delay={Math.min(index * 0.03, 0.24)}>
                 <a
                   href="#contacto"
                   className="group grid gap-4 py-8 transition-colors duration-500 ease-luxe md:grid-cols-12 md:items-start md:gap-8 md:py-10"
                 >
-                  <span className="font-display text-sm text-gold md:col-span-1">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="md:col-span-4">
+                  <div className="md:col-span-5">
                     <h3 className="font-display text-3xl text-paper transition-colors duration-500 ease-luxe group-hover:text-gold md:text-4xl">
                       {service.title}
                     </h3>
@@ -51,6 +47,16 @@ export function Services() {
             </li>
           ))}
         </ul>
+
+        <Reveal delay={0.08}>
+          <div className="mt-16 max-w-[54ch] space-y-5 border-t border-line pt-12">
+            <p className="text-base leading-relaxed text-mute">{servicesIntro.closing}</p>
+            <p className="text-base leading-relaxed text-paper/80">{servicesIntro.presence}</p>
+            <p className="font-display text-xl italic leading-snug text-gold md:text-2xl">
+              {brand.signature}
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

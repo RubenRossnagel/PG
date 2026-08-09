@@ -1,5 +1,27 @@
+import type { ReactNode } from "react"
 import { brand, contact } from "../data/content"
 import { Reveal } from "./Reveal"
+
+/** Resalta en negrita las marcas clave dentro de un párrafo. */
+function withBrandEmphasis(text: string): ReactNode[] {
+  const pattern = /(LA TOGA|Abogada Paula García|Paula García)/g
+  const parts = text.split(pattern)
+
+  return parts.map((part, index) => {
+    if (
+      part === "LA TOGA" ||
+      part === "Abogada Paula García" ||
+      part === "Paula García"
+    ) {
+      return (
+        <strong key={`${part}-${index}`} className="font-bold text-ink">
+          {part}
+        </strong>
+      )
+    }
+    return <span key={`t-${index}`}>{part}</span>
+  })
+}
 
 export function About() {
   return (
@@ -9,18 +31,25 @@ export function About() {
           <p className="text-[11px] uppercase tracking-[0.28em] text-gold-deep">
             Sobre la abogada
           </p>
-          <h2 className="mt-4 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
-            Paula García
+          <h2 className="mt-4 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+            Abogada Paula García
           </h2>
           <div className="mt-6 h-px w-16 bg-gold" />
-          <p className="mt-8 max-w-[42ch] text-base leading-relaxed text-ink/70 md:text-lg">
-            {brand.summary}
+          <div className="mt-8 max-w-[48ch] space-y-5">
+            {brand.about.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 48)}
+                className="text-base leading-relaxed text-ink/70 md:text-lg"
+              >
+                {withBrandEmphasis(paragraph)}
+              </p>
+            ))}
+          </div>
+
+          <p className="mt-10 max-w-[40ch] border-l-2 border-gold pl-5 font-display text-xl italic leading-snug text-ink md:text-2xl">
+            {brand.signature}
           </p>
-          <p className="mt-5 max-w-[42ch] text-base leading-relaxed text-ink/70">
-            El enfoque del estudio combina rigor jurídico con pedagogía: desarmamos
-            mitos, mostramos ejemplos prácticos y acompañamos a personas y familias
-            de Misiones en trámites que impactan su vida cotidiana.
-          </p>
+
           <p className="mt-8 text-sm text-ink/50">
             También en TikTok{" "}
             <a
@@ -43,11 +72,10 @@ export function About() {
                 className="aspect-[4/5] w-full origin-left scale-[1.15] object-cover object-left opacity-95 md:aspect-[5/6]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
-              {/* Estatua + copy anclados a la izquierda del recuadro */}
               <div className="absolute bottom-0 left-0 max-w-[90%] p-8 text-left">
-                <p className="font-display text-3xl text-gold">LA TOGA</p>
+                <p className="font-display text-3xl font-bold text-gold">LA TOGA</p>
                 <p className="mt-1 text-sm text-paper/75">
-                  Soluciones jurídicas integrales · Misiones
+                  Soluciones jurídicas integrales · Eldorado, Misiones
                 </p>
               </div>
             </div>

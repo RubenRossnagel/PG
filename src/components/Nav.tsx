@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { List, X } from "@phosphor-icons/react"
+import { List, WhatsappLogo, X } from "@phosphor-icons/react"
 import { brand, nav } from "../data/content"
 import { buildWhatsAppUrl, defaultWhatsAppGreeting } from "../lib/whatsapp"
 
@@ -53,12 +53,10 @@ export function Nav() {
             href={buildWhatsAppUrl(defaultWhatsAppGreeting)}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex h-10 items-center gap-2 rounded-full bg-gold px-4 text-sm font-medium text-ink transition-transform duration-500 ease-luxe hover:bg-gold-soft active:scale-[0.98]"
+            className="inline-flex h-10 items-center gap-2 rounded-full bg-gold px-4 text-sm font-medium text-ink transition-transform duration-500 ease-luxe hover:bg-gold-soft active:scale-[0.98]"
           >
+            <WhatsappLogo size={18} weight="fill" aria-hidden />
             WhatsApp
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-ink/10 transition-transform duration-500 ease-luxe group-hover:translate-x-0.5 group-hover:-translate-y-px">
-              ↗
-            </span>
           </a>
         </nav>
 

@@ -10,9 +10,16 @@ export const brand = {
   role: "Soluciones jurídicas integrales",
   location: "Misiones, Argentina",
   headline:
-    "Acompañamiento legal claro, humano y estratégico para proteger tus derechos.",
-  summary:
-    "Estudio jurídico orientado a familias, salud, fertilidad y previsional. Explicamos cada paso con lenguaje simple y estrategias concretas, como en nuestros contenidos educativos.",
+    "Asesoramiento jurídico integral, con compromiso, cercanía y soluciones pensadas para cada situación.",
+  /** Bio de la sección Estudio (párrafos). */
+  about: [
+    "Paula García posee una formación multidisciplinaria: Abogada, Escribana, Procuradora, Martillera Pública Nacional, Corredora de Comercio, Mandataria Nacional del Automotor y Créditos Prendarios, Perito Automotor y Profesora de Lengua y Literatura.",
+    "Brinda asesoramiento jurídico integral en Derecho de Familia, Salud, Previsional, Laboral-ART, Civil y Comercial, Régimen Jurídico del Automotor y Derecho Administrativo, con una mirada integral orientada a comprender cada situación y ofrecer alternativas jurídicas concretas.",
+    "Bajo el seudónimo LA TOGA, acerca el Derecho a la comunidad mediante contenidos claros, ejemplos prácticos y explicaciones destinadas a derribar mitos jurídicos. Desde Eldorado, Misiones, brinda atención presencial y asesoramiento a distancia, priorizando la claridad en la comunicación, el estudio particular de cada caso y el acompañamiento cercano. Su formación docente fortalece su vocación por explicar el Derecho en un lenguaje comprensible, sin perder rigurosidad jurídica.",
+  ],
+  /** Firma / saludo final del estudio. */
+  signature:
+    "Cada historia merece una mirada integral. Cada derecho, una solución responsable.",
 } as const
 
 export const contact = {
@@ -33,48 +40,182 @@ export const nav = [
   { label: "Contacto", href: "#contacto" },
 ] as const
 
+export const servicesIntro = {
+  eyebrow: "Áreas de práctica",
+  title: "Soluciones jurídicas para situaciones reales",
+  lead:
+    "Brindamos asesoramiento y representación en distintas áreas del Derecho, con un abordaje personalizado, comunicación clara y estrategias jurídicas adecuadas a las particularidades de cada situación.",
+  closing:
+    "Cada situación requiere una respuesta particular. Nuestro trabajo comienza con el análisis del caso, la explicación clara de las alternativas disponibles y la definición de una estrategia jurídica adecuada.",
+  presence: "Atención presencial en Eldorado, Misiones, y asesoramiento a distancia.",
+} as const
+
 export const services = [
   {
     id: "familia",
-    title: "Derecho de familia",
+    n: "01",
+    title: "Derecho de Familia",
     blurb:
-      "Cuota alimentaria, régimen de comunicación, lactancia y acuerdos que cuidan el vínculo familiar.",
-    topics: ["Cuota alimentaria", "Visitas y comunicación", "Derechos de lactancia"],
+      "Asesoramiento y representación en las relaciones familiares y en los conflictos derivados de ellas.",
+    topics: [
+      "Alimentos",
+      "Cuidado personal",
+      "Régimen de comunicación",
+      "Responsabilidad parental",
+      "Divorcio",
+      "Uniones convivenciales",
+      "Filiación",
+      "Autorizaciones judiciales",
+      "Violencia familiar",
+      "Acuerdos familiares",
+    ],
   },
   {
-    id: "fertilidad",
-    title: "Fertilidad y ROPA",
+    id: "civil",
+    n: "02",
+    title: "Derecho Civil y Comercial",
     blurb:
-      "Orientación sobre Método ROPA y cobertura bajo la Ley Nº 26.862 de reproducción asistida.",
-    topics: ["Método ROPA", "Ley 26.862", "Cobertura de tratamientos"],
+      "Asesoramiento en relaciones jurídicas entre particulares, obligaciones, contratos, bienes y conflictos de contenido patrimonial.",
+    topics: [
+      "Contratos",
+      "Cobro de deudas",
+      "Daños y perjuicios",
+      "Responsabilidad civil",
+      "Conflictos patrimoniales",
+      "Derechos reales",
+      "Desalojos",
+      "Prescripción adquisitiva",
+      "Acuerdos entre particulares",
+    ],
+  },
+  {
+    id: "sucesiones",
+    n: "03",
+    title: "Sucesiones",
+    blurb:
+      "Acompañamiento jurídico en los procesos vinculados con la transmisión y regularización del patrimonio de una persona fallecida.",
+    topics: [
+      "Sucesiones testamentarias e intestadas",
+      "Declaratoria de herederos",
+      "Bienes hereditarios",
+      "Partición",
+      "Inscripción de bienes",
+      "Conflictos entre herederos",
+    ],
   },
   {
     id: "salud",
-    title: "Amparos de salud",
+    n: "04",
+    title: "Derecho a la Salud",
     blurb:
-      "Cuando la obra social o prepaga niega un tratamiento, actuamos con amparo y seguimiento.",
-    topics: ["Negativas de cobertura", "Tratamientos urgentes", "Amparo"],
+      "Asesoramiento y representación frente a dificultades, demoras o negativas relacionadas con el acceso a prestaciones y tratamientos médicos.",
+    topics: [
+      "Obras sociales",
+      "Prepagas",
+      "Medicamentos",
+      "Cirugías",
+      "Prótesis",
+      "Tratamientos médicos",
+      "Coberturas especiales",
+      "Amparos de salud",
+    ],
+  },
+  {
+    id: "fertilidad",
+    n: "·",
+    title: "Fertilidad y Reproducción Humana Asistida",
+    blurb:
+      "Asesoramiento jurídico vinculado con el acceso y la cobertura de técnicas y tratamientos de reproducción médicamente asistida.",
+    topics: [
+      "Ley Nº 26.862",
+      "FIV",
+      "ICSI",
+      "Ovodonación",
+      "Método ROPA",
+      "Medicación",
+      "Criopreservación",
+      "Negativas de cobertura",
+    ],
   },
   {
     id: "previsional",
-    title: "Derecho previsional",
+    n: "05",
+    title: "Derecho Previsional",
     blurb:
-      "Jubilaciones, moratorias, aportes faltantes y opciones pensadas para madres e historias laborales reales.",
-    topics: ["Aportes incompletos", "Planes de pago", "Jubilación por hijos"],
+      "Asesoramiento para el acceso a jubilaciones, pensiones y demás prestaciones de la seguridad social.",
+    topics: [
+      "Jubilaciones",
+      "Pensiones",
+      "ANSES",
+      "IPS",
+      "Reconocimiento de servicios",
+      "Aportes faltantes",
+      "Tareas de cuidado",
+      "Planificación previsional",
+    ],
   },
   {
     id: "art",
-    title: "ART y riesgos del trabajo",
+    n: "06",
+    title: "Laboral-ART",
     blurb:
-      "Asesoramiento ante accidentes laborales y reclamos frente a ART, con foco en protección efectiva.",
-    topics: ["Accidentes laborales", "Reclamos ART", "Seguimiento del caso"],
+      "Asesoramiento y representación en conflictos derivados de las relaciones laborales, accidentes de trabajo y enfermedades profesionales.",
+    topics: [
+      "Despidos",
+      "Diferencias salariales",
+      "Indemnizaciones",
+      "Accidentes de trabajo",
+      "Enfermedades profesionales",
+      "ART",
+      "Comisiones Médicas",
+      "Incapacidad laboral",
+    ],
   },
   {
-    id: "partidas",
-    title: "Gestión de partidas",
+    id: "automotor",
+    n: "07",
+    title: "Régimen Jurídico del Automotor",
     blurb:
-      "Solicitud y gestión de partidas y documentación oficial en la provincia de Misiones.",
-    topics: ["Partidas provinciales", "Trámites documentales", "Seguimiento"],
+      "Asesoramiento jurídico y registral relacionado con automotores, su titularidad, transmisión y las situaciones derivadas de operaciones pendientes o irregulares.",
+    topics: [
+      "Transferencias",
+      "Formulario 08",
+      "Denuncia de venta",
+      "Informes registrales",
+      "Titularidad",
+      "Transferencias pendientes",
+      "Créditos prendarios",
+      "Asesoramiento registral automotor",
+    ],
+  },
+  {
+    id: "administrativo",
+    n: "08",
+    title: "Derecho Administrativo",
+    blurb:
+      "Asesoramiento y representación en procedimientos y relaciones jurídicas vinculadas con la Administración Pública.",
+    topics: [
+      "Actuaciones administrativas",
+      "Reclamos",
+      "Recursos",
+      "Sumarios administrativos",
+      "Empleo público",
+      "Procedimientos ante organismos públicos",
+    ],
+  },
+  {
+    id: "gestiones",
+    n: "09",
+    title: "Gestiones Jurídicas y Administrativas",
+    blurb:
+      "Realizamos gestiones ante organismos públicos y privados —incluida la gestión de partidas—, brindando acompañamiento durante las distintas etapas del trámite.",
+    topics: [
+      "Gestión de partidas",
+      "Gestiones administrativas y registrales",
+      "Obtención de documentación",
+      "Actas y partidas",
+      "Trámites ante organismos públicos y privados",
+    ],
   },
 ] as const
 
@@ -137,11 +278,15 @@ export const processSteps = [
 
 /** Temas del formulario — alineados con servicios reales del estudio. */
 export const consultationTopics = [
-  { value: "familia", label: "Derecho de familia" },
-  { value: "fertilidad", label: "Fertilidad / Método ROPA" },
-  { value: "salud", label: "Amparos de salud" },
-  { value: "previsional", label: "Jubilación / previsional" },
-  { value: "art", label: "ART / accidente laboral" },
-  { value: "partidas", label: "Partidas / documentación" },
+  { value: "familia", label: "Derecho de Familia" },
+  { value: "civil", label: "Civil y Comercial" },
+  { value: "sucesiones", label: "Sucesiones" },
+  { value: "salud", label: "Derecho a la Salud" },
+  { value: "fertilidad", label: "Fertilidad / ROPA" },
+  { value: "previsional", label: "Derecho Previsional" },
+  { value: "art", label: "Laboral-ART" },
+  { value: "automotor", label: "Régimen del Automotor" },
+  { value: "administrativo", label: "Derecho Administrativo" },
+  { value: "gestiones", label: "Gestiones / Partidas" },
   { value: "otro", label: "Otro motivo" },
 ] as const

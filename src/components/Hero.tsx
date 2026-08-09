@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "motion/react"
+import { WhatsappLogo } from "@phosphor-icons/react"
 import { brand } from "../data/content"
 import { buildWhatsAppUrl, defaultWhatsAppGreeting } from "../lib/whatsapp"
 
@@ -46,7 +47,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.14, ease: [0.32, 0.72, 0, 1] }}
           >
-            {brand.tagline}
+            Eldorado, Misiones
             <span className="text-mute"> — {brand.role}</span>
           </motion.p>
 
@@ -69,18 +70,10 @@ export function Hero() {
               href={buildWhatsAppUrl(defaultWhatsAppGreeting)}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex h-12 items-center gap-2 rounded-full bg-gold px-6 text-sm font-semibold text-ink transition-transform duration-500 ease-luxe hover:bg-gold-soft active:scale-[0.98]"
+              className="inline-flex h-12 items-center gap-2.5 rounded-full bg-gold px-6 text-sm font-semibold text-ink transition-transform duration-500 ease-luxe hover:bg-gold-soft active:scale-[0.98]"
             >
+              <WhatsappLogo size={22} weight="fill" aria-hidden />
               Consultar por WhatsApp
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink/10 transition-transform duration-500 ease-luxe group-hover:translate-x-0.5 group-hover:-translate-y-px">
-                ↗
-              </span>
-            </a>
-            <a
-              href="#contacto"
-              className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm text-paper transition-colors duration-500 ease-luxe hover:border-gold/50 hover:text-gold"
-            >
-              Enviar consulta
             </a>
           </motion.div>
         </div>
