@@ -24,16 +24,16 @@ export function Services() {
               <Reveal delay={Math.min(index * 0.03, 0.24)}>
                 <a
                   href="#contacto"
-                  className="group grid gap-4 py-8 transition-colors duration-500 ease-luxe md:grid-cols-12 md:items-start md:gap-8 md:py-10"
+                  className="group grid gap-3 py-4 transition-colors duration-500 ease-luxe md:grid-cols-12 md:items-start md:gap-8 md:py-5"
                 >
-                  <div className="md:col-span-5">
-                    <h3 className="font-display text-3xl text-paper transition-colors duration-500 ease-luxe group-hover:text-gold md:text-4xl">
+                  <div className="md:col-span-4">
+                    <h3 className="font-display text-3xl leading-tight text-paper transition-colors duration-500 ease-luxe group-hover:text-gold md:text-4xl">
                       {service.title}
                     </h3>
                   </div>
-                  <div className="md:col-span-5">
-                    <p className="text-base leading-relaxed text-mute">{service.blurb}</p>
-                    <p className="mt-3 text-xs uppercase tracking-[0.16em] text-mute/70">
+                  <div className="md:col-span-6">
+                    <p className="text-base leading-snug text-mute">{service.blurb}</p>
+                    <p className="mt-1.5 text-xs uppercase tracking-[0.14em] text-mute/70">
                       {service.topics.join(" · ")}
                     </p>
                   </div>
